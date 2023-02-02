@@ -18,7 +18,9 @@ class ProductService {
         try {
                const result = await product.findAll({
                 where: {
-                    availableQty:{[Op.gt]:0}
+                    availableQty:{
+                        [Op.gt]: 0,
+                    }
                 },
                 include: {
                     model: users,

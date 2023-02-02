@@ -1,9 +1,9 @@
 const { productInCar } = require('../models');
 
 class ProductInCarService {
-    static async create (product, car) {
+    static async create (productId, carId, quantity, status, price) {
         try {
-            const result = productInCar.create({productId, carId});
+            const result = await productInCar.create({product_id: productId, car_id:carId, quantity, status, price});
             return result;
         } catch (error) {
             throw error;
