@@ -3,7 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');//es para hacer log-detectar errores
 const routerApi = require('./routes');
 const error = require('./middlewares/error.middleware');
-
+const db = require('../src/utils/database');
 const app = express();//instancia de express
 
 app.use(express.json());
