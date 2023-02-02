@@ -12,6 +12,10 @@ app.use(morgan('tiny'));
 
 routerApi(app);//funcion de rutas y tambien middlewares
 
+db.sync({ alter:true})
+.then(() => console.log("conexion exitosa"))
+.catch((err) => console.log(err))
+
 app.use(error)
 
 module.exports = app;

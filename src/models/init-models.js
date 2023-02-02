@@ -7,13 +7,13 @@ const _productInCar = require("./productInCar");
 const _users = require("./users");
 
 function initModels(sequelize) {
-  const ProductInOrder = _ProductInOrder(sequelize, DataTypes);
+  const users = _users(sequelize, DataTypes);
   const car = _car(sequelize, DataTypes);
   const order = _order(sequelize, DataTypes);
   const product = _product(sequelize, DataTypes);
   const productInCar = _productInCar(sequelize, DataTypes);
-  const users = _users(sequelize, DataTypes);
-
+  const ProductInOrder = _ProductInOrder(sequelize, DataTypes);
+  
   productInCar.belongsTo(car, { as: "car", foreignKey: "car_id"});
   car.hasMany(productInCar, { as: "productInCars", foreignKey: "car_id"});
   ProductInOrder.belongsTo(order, { as: "order", foreignKey: "order_id"});
