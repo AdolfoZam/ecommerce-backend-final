@@ -2,7 +2,10 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
 const options = {
-    apis: ["./src/routes/auth.routes.js", "./src/models/users.js", "./src/routes/products.routes.js", "./src/models/product.js"],
+    apis: ["./src/routes/auth.routes.js", "./src/models/users.js",
+     "./src/routes/products.routes.js", "./src/models/product.js", 
+     "./src/routes/productInCar.routes.js","./src/models/productInCar.js",
+    ],
     definition: {
         openapi: "3.0.0",
         info: {

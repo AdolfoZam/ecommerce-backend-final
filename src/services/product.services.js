@@ -19,7 +19,7 @@ class ProductService {
                const result = await product.findAll({
                 where: {
                     availableQty:{
-                        [Op.gt]: 0,
+                        [Op.gt]: 0
                     }
                 },
                 include: {
@@ -30,7 +30,7 @@ class ProductService {
             });
             return result;
         } catch (error) {
-            throw error;
+            throw error; 
         }
     }
 };

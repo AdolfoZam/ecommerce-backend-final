@@ -7,7 +7,6 @@ class AuthServices {
   static async register(user) {
     try {
       const result = await users.create(user);
-      console.log(result)
       const { id } = result;
       await car.create({ user_id: id });
       return result;
